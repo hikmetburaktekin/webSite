@@ -23,11 +23,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <meta name="description" content="Hikmet Burak Tekin'in websitesine hoşgeldiniz!👾">
+    <meta name="description" content="Welcome to my personal website — explore my projects, blog, and background. Click through if you'd like to learn more about who I am and what I do.">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Hikmet Burak Tekin, Burak Tekin, Burak Tekin DEU, Burak Tekin Fibabanka, Hikmet Burak Tekin Fibabanka,">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <style>
         :root {
@@ -82,12 +82,6 @@
             display: inline-block;
             font-style: normal;
             animation: none;
-        }
-
-        .intro {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            color: var(--secondary-color);
         }
 
         .section {
@@ -230,19 +224,51 @@ li strong {
 .social-links a {
     font-size: 3rem;
     color: var(--secondary-color);
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-links a:hover {
-    color: var(--accent-color);
     transform: translateY(-3px);
 }
 
-.bio {
-    font-size: 1.1rem;
-    color: var(--secondary-color);
-    margin-bottom: 2rem;
-    line-height: 1.6;
+.social-links a[title="LinkedIn"]:hover {
+    color: #0a66c2;
+}
+
+.social-links a[title="GitHub"]:hover {
+    color: #f0f6fc;
+}
+
+.social-links a[title="Instagram"]:hover {
+    color: #e4405f;
+}
+
+.social-links a[title="Letterboxd"] {
+    display: inline-flex;
+    align-items: center;
+}
+
+.letterboxd-icon {
+    width: 1em;
+    height: 1em;
+    display: block;
+}
+
+.letterboxd-icon .lb-dot {
+    fill: currentColor;
+    transition: fill 0.3s ease;
+}
+
+.social-links a[title="Letterboxd"]:hover .lb-orange {
+    fill: #ff8000;
+}
+
+.social-links a[title="Letterboxd"]:hover .lb-green {
+    fill: #00e054;
+}
+
+.social-links a[title="Letterboxd"]:hover .lb-blue {
+    fill: #40bcf4;
 }
 
 .skills-container {
@@ -266,8 +292,51 @@ li strong {
     transform: scale(1.1);
 }
 
+.skill-sql {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #e8e8e8;
+    line-height: 3rem;
+    display: inline-flex;
+    align-items: center;
+}
+
 .fa-html5 {
     color: #e34f26;
+}
+
+.fa-php {
+    color: #777BB3;
+}
+
+.fa-npm {
+    color: #CB3837;
+}
+
+.devicon-flutter-plain {
+    color: #02569B;
+}
+
+.devicon-dart-plain {
+    color: #0175C2;
+}
+
+.fa-node-js {
+    color: #339933;
+}
+
+.fa-brain {
+    color: #a78bfa;
+}
+
+.fa-python {
+    color: #3776AB;
+}
+
+.devicon-mysql-plain {
+    color: #4479A1;
 }
 
 .fa-css3-alt {
@@ -278,24 +347,8 @@ li strong {
     color: #f7df1e;
 }
 
-.fa-php {
-    color: #777BB3;
-}
-
 .fa-bootstrap {
     color: #7952B3;
-}
-
-.fa-wordpress {
-    color: #21759B;
-}
-
-.fa-npm {
-    color: #CB3837;
-}
-
-.devicon-mysql-plain {
-    color: #4479A1;
 }
 
 .devicon-csharp-plain {
@@ -313,6 +366,347 @@ li strong {
 .devicon-raspberrypi-line {
     color: #A22846;
 }
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    position: relative;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-color);
+}
+
+.project-card img.project-thumb {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    filter: brightness(0.85);
+    transition: filter 0.3s ease;
+}
+
+.project-card:hover img.project-thumb {
+    filter: brightness(1);
+}
+
+.project-tech {
+    position: absolute;
+    top: 0.65rem;
+    right: 0.65rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.4rem;
+    max-width: 70%;
+    z-index: 2;
+}
+
+.project-tech i {
+    font-size: 1.15rem;
+    padding: 0.35rem;
+    border-radius: 6px;
+    background: rgba(10, 10, 10, 0.85);
+    border: 1px solid #333;
+    backdrop-filter: blur(4px);
+    filter: none;
+    opacity: 1;
+}
+
+.project-info {
+    padding: 1rem 1.1rem 1.2rem;
+}
+
+.project-info h3 {
+    font-size: 1.15rem;
+    margin: 0 0 0.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.project-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.project-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 12px;
+    max-width: 860px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.9rem;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #444;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    line-height: 1;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.modal-close:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.modal-slider {
+    position: relative;
+    padding: 1rem 1rem 0;
+}
+
+.modal-slide-frame {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-slide-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    cursor: zoom-in;
+}
+
+.image-zoom {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.94);
+    z-index: 1100;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    overflow: auto;
+}
+
+.image-zoom.active {
+    display: flex;
+}
+
+.image-zoom img {
+    max-width: min(1600px, 96vw);
+    max-height: none;
+    width: auto;
+    height: auto;
+    min-width: min(100%, 900px);
+    border-radius: 6px;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 1px #333;
+}
+
+.image-zoom-close {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid #444;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    line-height: 1;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1101;
+}
+
+.image-zoom-close:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.image-zoom-hint {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    pointer-events: none;
+}
+
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    border: 1px solid #444;
+    background: rgba(10, 10, 10, 0.8);
+    color: var(--text-color);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.modal-nav:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.modal-nav.prev {
+    left: 1.4rem;
+}
+
+.modal-nav.next {
+    right: 1.4rem;
+}
+
+.modal-counter {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    margin-top: 0.65rem;
+}
+
+.modal-thumbs {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem 0;
+    overflow-x: auto;
+    justify-content: center;
+}
+
+.modal-thumbs img {
+    width: 88px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    opacity: 0.6;
+    flex-shrink: 0;
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.modal-thumbs img:hover,
+.modal-thumbs img.active {
+    opacity: 1;
+    border-color: var(--accent-color);
+}
+
+.modal-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.modal-body h2 {
+    font-size: 1.4rem;
+    margin: 0 0 0.75rem;
+}
+
+.modal-body p {
+    color: #c9c9c9;
+    font-size: 0.95rem;
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+}
+
+.modal-summary {
+    color: #c9c9c9;
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+    line-height: 1.65;
+}
+
+.modal-tech-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.modal-tech-row i {
+    font-size: 1.6rem;
+}
+
+.modal-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.modal-links a {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+    .project-card img.project-thumb {
+        height: 150px;
+    }
+
+    .project-tech i {
+        font-size: 1rem;
+        padding: 0.28rem;
+    }
+
+    .modal-nav {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.95rem;
+    }
+
+    .modal-nav.prev {
+        left: 1.15rem;
+    }
+
+    .modal-nav.next {
+        right: 1.15rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -321,23 +715,9 @@ li strong {
     <header data-aos="fade-down" data-aos-duration="1000">
         <div id="content-tr">
             <h1 class="text-scramble">Selam, ben Hikmet Burak Tekin <span class="emoji">👾</span></h1>
-            <p class="bio">
-                W.I.P.
-            </p>
-            <p class="intro" data-aos="fade-up" data-aos-delay="200">
-                Stajyer @ Fibabanka<br>
-                4. Sınıf @ Dokuz Eylül University<br>
-            </p>
         </div>
         <div id="content-en" style="display: none">
             <h1 class="text-scramble">Hi, I'm Hikmet Burak Tekin <span class="emoji">👾</span></h1>
-            <p class="bio">
-                W.I.P.
-            </p>                                                       
-            <p class="intro" data-aos="fade-up" data-aos-delay="200">
-                Intern @ Fibabanka<br>
-                4th Year Student @ Dokuz Eylül University<br>
-            </p>
         </div>
     </header>
    
@@ -348,8 +728,8 @@ li strong {
                 <li data-aos="fade-right" data-aos-delay="400">
                     <span class="emoji">👨‍💻</span>
                     <div class="experience-content">
-                        <div>Stajyer @ <strong>Fibabanka AR-GE, İnovasyon, FSMH ve CIO Ofis</strong><span class="date">2024 Mart - ???</span></div>
-                        <span class="job-description">W.I.P.</span>
+                        <div>Stajyer @ <strong>Fibabanka AR-GE, İnovasyon, FSMH ve CIO Ofis</strong><span class="date">2024 Mart - 2025 Aralık</span></div>
+                        <span class="job-description">AR-GE ve inovasyon ekibinde staj yaptım. Focus Fibabanka WordPress sitesinin yönetimini destekledim; kurum içi girişimcilik programlarının yürütülmesine katkı sağladım. Mevcut iş süreçlerini inceledim ve ilgili içerikleri güncelledim. SQL, Python ve WordPress kullanarak çalışmalara katkı sağladım.</span>
                     </div>
                 </li>
                 <li data-aos="fade-right" data-aos-delay="400">
@@ -374,8 +754,8 @@ li strong {
                     <li data-aos="fade-right" data-aos-delay="400">
                         <span class="emoji">👨‍💻</span>
                         <div class="experience-content">
-                            <div>Intern @ <strong>Fibabanka R&D, Innovation, IP and CIO Office</strong><span class="date">March 2024 - ???</span></div>
-                            <span class="job-description">W.I.P.</span>
+                            <div>Intern @ <strong>Fibabanka R&D, Innovation, IP and CIO Office</strong><span class="date">March 2024 - December 2025</span></div>
+                            <span class="job-description">Interned with the R&D and innovation team. Supported management of the Focus Fibabanka WordPress site and contributed to running internal entrepreneurship programs. Reviewed existing business processes and updated related content. Contributed using SQL, Python, and WordPress.</span>
                         </div>
                     </li>
                     <li data-aos="fade-right" data-aos-delay="400">
@@ -404,7 +784,7 @@ li strong {
                     <span class="emoji">🎓</span>
                     <div class="experience-content">
                         <div>Yönetim Bilişim Sistemleri @ <strong>Dokuz Eylül Üniversitesi</strong><span class="date">2021 Ekim - 2026 Temmuz</span></div>
-                        <span class="job-description">W.I.P.</span>
+                        <span class="job-description">Eğitim sürecinde çeşitli projeler geliştirerek teorik bilgimi uygulamaya taşıdım. ERP süreçleri üzerine sunumlar hazırladım; SQL, PHP, Python ve C# ile uygulamalı çalışmalar yaptım.</span>
                     </div>
                 </li>
                 <li data-aos="fade-right" data-aos-delay="400">
@@ -430,7 +810,7 @@ li strong {
                     <span class="emoji">🎓</span>
                     <div class="experience-content">
                         <div>Management Information Systems @ <strong>Dokuz Eylul University</strong><span class="date">2021 October - 2026 July</span></div>
-                        <span class="job-description">W.I.P.</span>
+                        <span class="job-description">Strengthened my theoretical knowledge through various applied projects during my studies. Prepared presentations on ERP processes and worked hands-on with SQL, PHP, Python, and C#.</span>
                     </div>
                 </li>
                 <li data-aos="fade-right" data-aos-delay="400">
@@ -452,6 +832,176 @@ li strong {
     </section>
 
    <section class="section" data-aos="fade-up">
+        <div id="projects-tr">
+            <h2>Projeler</h2>
+            <div class="projects-grid">
+                <article class="project-card"
+                    data-title="Odaklan"
+                    data-desc="Yapay zeka destekli odaklanma mobil uygulaması."
+                    data-summary="Dikkat dağınıklığına karşı kişiselleştirilmiş odaklanma planları sunar. Pomodoro gibi metotları enerji seviyesine ve boş vakte göre bildirimlerle destekler; kullanıcı etkileşimlerinden öğrenerek zamanla daha akıllı öneriler verir."
+                    data-images='["assets/projects/odaklanapp/odaklanlogo-kapakfoto.png","assets/projects/odaklanapp/girissayfasi.png","assets/projects/odaklanapp/pomodoroekrani.png","assets/projects/odaklanapp/gorevekleme.png","assets/projects/odaklanapp/takvimsayfasi.png","assets/projects/odaklanapp/aichatbot.png","assets/projects/odaklanapp/profilsayfasi.png"]'
+                    data-tech="Flutter,Dart,AI"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-tech">
+                        <i class="devicon-flutter-plain" title="Flutter"></i>
+                        <i class="devicon-dart-plain" title="Dart"></i>
+                        <i class="fas fa-brain" title="Yapay Zeka"></i>
+                    </div>
+                    <img class="project-thumb" src="assets/projects/odaklanapp/odaklanlogo-kapakfoto.png" alt="Odaklan">
+                    <div class="project-info">
+                        <h3>Odaklan</h3>
+                        <p>Yapay zeka destekli odaklanma mobil uygulaması.</p>
+                    </div>
+                </article>
+                <article class="project-card"
+                    data-title="Futbol Maç Tahmini"
+                    data-desc="Sınıflandırma algoritmasıyla maç sonucu tahmin uygulaması."
+                    data-summary="Geçmiş maç verileriyle sınıflandırma modeli eğiterek maç sonuçlarını tahmin eder. Dashboard, takım analizi ve model analizi ekranlarıyla tahminleri ve model performansını görselleştirir."
+                    data-images='["assets/projects/footballpredict/kapakfotosu.png","assets/projects/footballpredict/footballpredictdashboard.png","assets/projects/footballpredict/footballpredict_takimanalizi.png","assets/projects/footballpredict/footballpredict_modelanalizi.png"]'
+                    data-tech="Python,SQL,HTML,CSS,AI"
+                    data-aos="fade-up" data-aos-delay="250">
+                    <div class="project-tech">
+                        <i class="fab fa-python" title="Python"></i>
+                        <i class="devicon-mysql-plain" title="SQL"></i>
+                        <i class="fab fa-html5" title="HTML"></i>
+                        <i class="fab fa-css3-alt" title="CSS"></i>
+                        <i class="fas fa-brain" title="Yapay Zeka"></i>
+                    </div>
+                    <img class="project-thumb" src="assets/projects/footballpredict/kapakfotosu.png" alt="Futbol Maç Tahmini">
+                    <div class="project-info">
+                        <h3>Futbol Maç Tahmini</h3>
+                        <p>Sınıflandırma algoritmasıyla maç sonucu tahmin uygulaması.</p>
+                    </div>
+                </article>
+                <article class="project-card"
+                    data-title="Yönetim Bilgi Sistemi"
+                    data-desc="Ürün, depo ve stok hareketlerini yöneten web tabanlı yönetim bilgi sistemi."
+                    data-summary="Ürün, depo, tedarikçi ve stok hareketlerini tek panelden yönetir. Listeleme ve düzenleme ekranlarıyla envanter takibini kolaylaştırır; giriş sistemiyle yetkili kullanıcı erişimi sağlar."
+                    data-images='["assets/projects/bilisimSistemAnaliz/kapakfoto-girissayfasi.png","assets/projects/bilisimSistemAnaliz/stokhareketleri.png","assets/projects/bilisimSistemAnaliz/urunlisteleme.png","assets/projects/bilisimSistemAnaliz/depolistele.png","assets/projects/bilisimSistemAnaliz/urunduzenle.png"]'
+                    data-tech="PHP,SQL,HTML,CSS,Bootstrap"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-tech">
+                        <i class="fab fa-php" title="PHP"></i>
+                        <i class="devicon-mysql-plain" title="SQL"></i>
+                        <i class="fab fa-html5" title="HTML"></i>
+                        <i class="fab fa-css3-alt" title="CSS"></i>
+                        <i class="fab fa-bootstrap" title="Bootstrap"></i>
+                    </div>
+                    <img class="project-thumb" src="assets/projects/bilisimSistemAnaliz/kapakfoto-girissayfasi.png" alt="Yönetim Bilgi Sistemi">
+                    <div class="project-info">
+                        <h3>Yönetim Bilgi Sistemi</h3>
+                        <p>Ürün, depo ve stok hareketlerini yöneten web tabanlı yönetim bilgi sistemi.</p>
+                    </div>
+                </article>
+                <article class="project-card"
+                    data-title="Gigabank"
+                    data-desc="Müşteri faiz/altın geliri ve çalışan performans hesaplamaları içeren bankacılık karar destek sistemi."
+                    data-summary="Müşteri faiz ve altın geliri ile çalışan performans hesaplamaları sunar. Dashboard ve rapor ekranlarıyla şube, müşteri ve çalışan verilerini analiz ederek bankacılık kararlarını destekler."
+                    data-images='["assets/projects/bankaKararDestek/dashboard.png","assets/projects/bankaKararDestek/musterifaizgelirihesapla.png","assets/projects/bankaKararDestek/altingelirihesapla.png","assets/projects/bankaKararDestek/calisanperformanshesapla.png"]'
+                    data-tech="PHP,JavaScript,SQL,HTML,CSS,Bootstrap,Node.js"
+                    data-aos="fade-up" data-aos-delay="350">
+                    <div class="project-tech">
+                        <i class="fab fa-php" title="PHP"></i>
+                        <i class="fab fa-js" title="JavaScript"></i>
+                        <i class="devicon-mysql-plain" title="SQL"></i>
+                        <i class="fab fa-html5" title="HTML"></i>
+                        <i class="fab fa-css3-alt" title="CSS"></i>
+                        <i class="fab fa-bootstrap" title="Bootstrap"></i>
+                        <i class="fab fa-node-js" title="Node.js"></i>
+                    </div>
+                    <img class="project-thumb" src="assets/projects/bankaKararDestek/dashboard.png" alt="Gigabank">
+                    <div class="project-info">
+                        <h3>Gigabank</h3>
+                        <p>Müşteri faiz/altın geliri ve çalışan performans hesaplamaları içeren bankacılık karar destek sistemi.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div id="projects-en" style="display: none">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card"
+                    data-title="Odaklan"
+                    data-desc="AI-powered focus mobile app."
+                    data-summary="Creates personalized focus plans against distraction. Supports methods like Pomodoro with notifications based on energy and free time, and learns from interactions to offer smarter suggestions over time."
+                    data-images='["assets/projects/odaklanapp/odaklanlogo-kapakfoto.png","assets/projects/odaklanapp/girissayfasi.png","assets/projects/odaklanapp/pomodoroekrani.png","assets/projects/odaklanapp/gorevekleme.png","assets/projects/odaklanapp/takvimsayfasi.png","assets/projects/odaklanapp/aichatbot.png","assets/projects/odaklanapp/profilsayfasi.png"]'
+                    data-tech="Flutter,Dart,AI"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-tech">
+                        <i class="devicon-flutter-plain" title="Flutter"></i>
+                        <i class="devicon-dart-plain" title="Dart"></i>
+                        <i class="fas fa-brain" title="AI"></i>
+                    </div>
+                    <img class="project-thumb" src="assets/projects/odaklanapp/odaklanlogo-kapakfoto.png" alt="Odaklan">
+                    <div class="project-info">
+                        <h3>Odaklan</h3>
+                        <p>AI-powered focus mobile app.</p>
+                    </div>
+                </article>
+                <article class="project-card"
+                    data-title="Football Match Prediction"
+                    data-desc="Match result prediction app using a classification algorithm."
+                    data-summary="Trains a classification model on historical match data to predict outcomes. Visualizes predictions and model performance through dashboard, team analysis, and model analysis views."
+                    data-images='["assets/projects/footballpredict/kapakfotosu.png","assets/projects/footballpredict/footballpredictdashboard.png","assets/projects/footballpredict/footballpredict_takimanalizi.png","assets/projects/footballpredict/footballpredict_modelanalizi.png"]'
+                    data-tech="Python,SQL,HTML,CSS,AI"
+                    data-aos="fade-up" data-aos-delay="250">
+                    <div class="project-tech">
+                        <i class="fab fa-python" title="Python"></i>
+                        <i class="devicon-mysql-plain" title="SQL"></i>
+                        <i class="fab fa-html5" title="HTML"></i>
+                        <i class="fab fa-css3-alt" title="CSS"></i>
+                        <i class="fas fa-brain" title="AI"></i>
+                    </div>
+                    <img class="project-thumb" src="assets/projects/footballpredict/kapakfotosu.png" alt="Football Match Prediction">
+                    <div class="project-info">
+                        <h3>Football Match Prediction</h3>
+                        <p>Match result prediction app using a classification algorithm.</p>
+                    </div>
+                </article>
+                <article class="project-card"
+                    data-title="Management Information System"
+                    data-desc="Web-based MIS for products, warehouses, and stock movements."
+                    data-summary="Manages products, warehouses, suppliers, and stock movements from one panel. Listing and editing screens simplify inventory tracking, with login-based access for authorized users."
+                    data-images='["assets/projects/bilisimSistemAnaliz/kapakfoto-girissayfasi.png","assets/projects/bilisimSistemAnaliz/stokhareketleri.png","assets/projects/bilisimSistemAnaliz/urunlisteleme.png","assets/projects/bilisimSistemAnaliz/depolistele.png","assets/projects/bilisimSistemAnaliz/urunduzenle.png"]'
+                    data-tech="PHP,SQL,HTML,CSS,Bootstrap"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-tech">
+                        <i class="fab fa-php" title="PHP"></i>
+                        <i class="devicon-mysql-plain" title="SQL"></i>
+                        <i class="fab fa-html5" title="HTML"></i>
+                        <i class="fab fa-css3-alt" title="CSS"></i>
+                        <i class="fab fa-bootstrap" title="Bootstrap"></i>
+                    </div>
+                    <img class="project-thumb" src="assets/projects/bilisimSistemAnaliz/kapakfoto-girissayfasi.png" alt="Management Information System">
+                    <div class="project-info">
+                        <h3>Management Information System</h3>
+                        <p>Web-based MIS for products, warehouses, and stock movements.</p>
+                    </div>
+                </article>
+                <article class="project-card"
+                    data-title="Gigabank"
+                    data-desc="Banking DSS with customer interest/gold income and employee performance calculations."
+                    data-summary="Offers customer interest and gold income calculations plus employee performance insights. Supports banking decisions by analyzing branch, customer, and employee data through dashboards and reports."
+                    data-images='["assets/projects/bankaKararDestek/dashboard.png","assets/projects/bankaKararDestek/musterifaizgelirihesapla.png","assets/projects/bankaKararDestek/altingelirihesapla.png","assets/projects/bankaKararDestek/calisanperformanshesapla.png"]'
+                    data-tech="PHP,JavaScript,SQL,HTML,CSS,Bootstrap,Node.js"
+                    data-aos="fade-up" data-aos-delay="350">
+                    <div class="project-tech">
+                        <i class="fab fa-php" title="PHP"></i>
+                        <i class="fab fa-js" title="JavaScript"></i>
+                        <i class="devicon-mysql-plain" title="SQL"></i>
+                        <i class="fab fa-html5" title="HTML"></i>
+                        <i class="fab fa-css3-alt" title="CSS"></i>
+                        <i class="fab fa-bootstrap" title="Bootstrap"></i>
+                        <i class="fab fa-node-js" title="Node.js"></i>
+                    </div>
+                    <img class="project-thumb" src="assets/projects/bankaKararDestek/dashboard.png" alt="Gigabank">
+                    <div class="project-info">
+                        <h3>Gigabank</h3>
+                        <p>Banking DSS with customer interest/gold income and employee performance calculations.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
     </section>
 
     <section class="section" data-aos="fade-up">
@@ -459,32 +1009,24 @@ li strong {
             <h2>Yeteneklerim</h2>
             <div class="skills-container">
                 <i class="fab fa-html5 skill-icon"></i>
-                <i class="fab fa-css3-alt skill-icon"></i>
-                <i class="fab fa-js skill-icon"></i>
-                <i class="devicon-mysql-plain skill-icon"></i>
+                <i class="fab fa-python skill-icon"></i>
+                <i class="devicon-flutter-plain skill-icon"></i>
+                <span class="skill-icon skill-sql" title="SQL">SQL</span>
                 <i class="fab fa-php skill-icon"></i>
+                <i class="fab fa-node-js skill-icon"></i>
                 <i class="devicon-csharp-plain skill-icon"></i>
-                <i class="devicon-canva-original skill-icon"></i>
-                <i class="fab fa-bootstrap skill-icon"></i>
-                <i class="fab fa-wordpress skill-icon"></i>
-                <i class="devicon-photoshop-plain skill-icon"></i>
-                <i class="devicon-raspberrypi-line skill-icon"></i>
             </div>
         </div>
         <div id="skills-en" style="display: none">
             <h2>Skills</h2>
             <div class="skills-container">
                 <i class="fab fa-html5 skill-icon"></i>
-                <i class="fab fa-css3-alt skill-icon"></i>
-                <i class="fab fa-js skill-icon"></i>
-                <i class="devicon-mysql-plain skill-icon"></i>
+                <i class="fab fa-python skill-icon"></i>
+                <i class="devicon-flutter-plain skill-icon"></i>
+                <span class="skill-icon skill-sql" title="SQL">SQL</span>
                 <i class="fab fa-php skill-icon"></i>
+                <i class="fab fa-node-js skill-icon"></i>
                 <i class="devicon-csharp-plain skill-icon"></i>
-                <i class="devicon-canva-original skill-icon"></i>
-                <i class="fab fa-bootstrap skill-icon"></i>
-                <i class="fab fa-wordpress skill-icon"></i>
-                <i class="devicon-photoshop-plain skill-icon"></i>
-                <i class="devicon-raspberrypi-line skill-icon"></i>
             </div>
         </div>
     </section>
@@ -496,6 +1038,13 @@ li strong {
                 <a href="https://linkedin.com/in/hikmetburaktekin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/hikmetburaktekin" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://instagram.com/hikmetburaktekin" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://letterboxd.com/Wonderfundle/" target="_blank" rel="noopener noreferrer" title="Letterboxd" aria-label="Letterboxd">
+                    <svg class="letterboxd-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle class="lb-dot lb-orange" cx="5.2" cy="12" r="4.2"></circle>
+                        <circle class="lb-dot lb-green" cx="12" cy="12" r="4.2"></circle>
+                        <circle class="lb-dot lb-blue" cx="18.8" cy="12" r="4.2"></circle>
+                    </svg>
+                </a>
             </div>
         </div>
         <div id="social-en" style="display: none">
@@ -504,6 +1053,13 @@ li strong {
                 <a href="https://linkedin.com/in/hikmetburaktekin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/hikmetburaktekin" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://instagram.com/hikmetburaktekin" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://letterboxd.com/Wonderfundle/" target="_blank" rel="noopener noreferrer" title="Letterboxd" aria-label="Letterboxd">
+                    <svg class="letterboxd-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle class="lb-dot lb-orange" cx="5.2" cy="12" r="4.2"></circle>
+                        <circle class="lb-dot lb-green" cx="12" cy="12" r="4.2"></circle>
+                        <circle class="lb-dot lb-blue" cx="18.8" cy="12" r="4.2"></circle>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -515,9 +1071,37 @@ li strong {
             <a href="mailto:hello@hikmetburaktekin.com" class="contact" data-aos="fade-up">Contact Me ✉️</a>
         </div>
     </section>
+    <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button class="modal-close" type="button" aria-label="Close">&times;</button>
+            <div class="modal-slider">
+                <button class="modal-nav prev" type="button" aria-label="Previous">&#10094;</button>
+                <div class="modal-slide-frame">
+                    <img id="modalMainImage" src="" alt="">
+                </div>
+                <button class="modal-nav next" type="button" aria-label="Next">&#10095;</button>
+                <div class="modal-counter" id="modalCounter"></div>
+            </div>
+            <div class="modal-thumbs" id="modalThumbs"></div>
+            <div class="modal-body">
+                <h2 id="modalTitle"></h2>
+                <div class="modal-tech-row" id="modalTech"></div>
+                <p id="modalDesc"></p>
+                <p class="modal-summary" id="modalSummary"></p>
+                <div class="modal-links" id="modalLinks"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-zoom" id="imageZoom" role="dialog" aria-modal="true" aria-label="Zoomed image">
+        <button class="image-zoom-close" type="button" aria-label="Close zoom">&times;</button>
+        <img id="zoomImage" src="" alt="">
+        <div class="image-zoom-hint">Kapatmak için tıkla · Esc</div>
+    </div>
+
     <footer data-aos="fade-up">
         <p>
-            © 2024 Hikmet Burak Tekin<br>
+            © 2026 Hikmet Burak Tekin<br>
             📍 Izmir, Turkey
         </p>
     </footer>
@@ -624,6 +1208,150 @@ li strong {
                 const emojiContent = emoji ? emoji.textContent : '';
                 const textWithoutEmoji = el.textContent.replace(emojiContent, '').trim();
                 fx.setText(textWithoutEmoji, emojiContent);
+            });
+
+            const modal = document.getElementById('projectModal');
+            const modalMain = document.getElementById('modalMainImage');
+            const modalThumbs = document.getElementById('modalThumbs');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDesc = document.getElementById('modalDesc');
+            const modalSummary = document.getElementById('modalSummary');
+            const modalTech = document.getElementById('modalTech');
+            const modalLinks = document.getElementById('modalLinks');
+            const modalCounter = document.getElementById('modalCounter');
+            const imageZoom = document.getElementById('imageZoom');
+            const zoomImage = document.getElementById('zoomImage');
+            let slideImages = [];
+            let slideIndex = 0;
+            let slideTitle = '';
+
+            function showSlide(index) {
+                if (!slideImages.length) return;
+                slideIndex = (index + slideImages.length) % slideImages.length;
+                modalMain.src = slideImages[slideIndex];
+                modalMain.alt = `${slideTitle} ${slideIndex + 1}`;
+                modalCounter.textContent = `${slideIndex + 1} / ${slideImages.length}`;
+                modalThumbs.querySelectorAll('img').forEach((img, i) => {
+                    img.classList.toggle('active', i === slideIndex);
+                });
+                if (imageZoom.classList.contains('active')) {
+                    zoomImage.src = slideImages[slideIndex];
+                    zoomImage.alt = modalMain.alt;
+                }
+            }
+
+            function openZoom() {
+                if (!modalMain.src) return;
+                zoomImage.src = modalMain.src;
+                zoomImage.alt = modalMain.alt;
+                imageZoom.classList.add('active');
+                imageZoom.scrollTop = 0;
+            }
+
+            function closeZoom() {
+                imageZoom.classList.remove('active');
+            }
+
+            const techIcons = {
+                Python: '<i class="fab fa-python" title="Python"></i>',
+                SQL: '<i class="devicon-mysql-plain" title="SQL"></i>',
+                HTML: '<i class="fab fa-html5" title="HTML"></i>',
+                CSS: '<i class="fab fa-css3-alt" title="CSS"></i>',
+                JavaScript: '<i class="fab fa-js" title="JavaScript"></i>',
+                PHP: '<i class="fab fa-php" title="PHP"></i>',
+                Bootstrap: '<i class="fab fa-bootstrap" title="Bootstrap"></i>',
+                'Node.js': '<i class="fab fa-node-js" title="Node.js"></i>',
+                Flutter: '<i class="devicon-flutter-plain" title="Flutter"></i>',
+                Dart: '<i class="devicon-dart-plain" title="Dart"></i>',
+                AI: '<i class="fas fa-brain" title="AI"></i>',
+                'C#': '<i class="devicon-csharp-plain" title="C#"></i>'
+            };
+
+            function openProjectModal(card) {
+                slideImages = JSON.parse(card.dataset.images || '[]');
+                slideIndex = 0;
+                slideTitle = card.dataset.title || '';
+                const tech = (card.dataset.tech || '').split(',').filter(Boolean);
+                const summary = card.dataset.summary || '';
+
+                modalTitle.textContent = slideTitle;
+                modalDesc.style.display = 'none';
+                modalSummary.textContent = summary;
+                modalSummary.style.display = summary ? 'block' : 'none';
+                modalTech.innerHTML = tech.map(t => techIcons[t.trim()] || `<span>${t.trim()}</span>`).join('');
+                modalThumbs.innerHTML = slideImages.map((src, i) =>
+                    `<img src="${src}" alt="${slideTitle} ${i + 1}" class="${i === 0 ? 'active' : ''}" data-index="${i}">`
+                ).join('');
+
+                modalLinks.innerHTML = '';
+                if (card.dataset.github) {
+                    modalLinks.innerHTML += `<a href="${card.dataset.github}" target="_blank" rel="noopener">GitHub</a>`;
+                }
+                if (card.dataset.live) {
+                    modalLinks.innerHTML += `<a href="${card.dataset.live}" target="_blank" rel="noopener">Live Demo</a>`;
+                }
+
+                showSlide(0);
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeProjectModal() {
+                closeZoom();
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.addEventListener('click', () => openProjectModal(card));
+            });
+
+            modalMain.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openZoom();
+            });
+
+            imageZoom.querySelector('.image-zoom-close').addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeZoom();
+            });
+            imageZoom.addEventListener('click', (e) => {
+                if (e.target === imageZoom || e.target === zoomImage) closeZoom();
+            });
+
+            modal.querySelector('.modal-nav.prev').addEventListener('click', (e) => {
+                e.stopPropagation();
+                showSlide(slideIndex - 1);
+            });
+            modal.querySelector('.modal-nav.next').addEventListener('click', (e) => {
+                e.stopPropagation();
+                showSlide(slideIndex + 1);
+            });
+
+            modalThumbs.addEventListener('click', (e) => {
+                const thumb = e.target.closest('img');
+                if (!thumb) return;
+                showSlide(Number(thumb.dataset.index));
+            });
+
+            modal.querySelector('.modal-close').addEventListener('click', closeProjectModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeProjectModal();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (imageZoom.classList.contains('active')) {
+                    if (e.key === 'Escape') {
+                        closeZoom();
+                        return;
+                    }
+                    if (e.key === 'ArrowLeft') showSlide(slideIndex - 1);
+                    if (e.key === 'ArrowRight') showSlide(slideIndex + 1);
+                    return;
+                }
+                if (!modal.classList.contains('active')) return;
+                if (e.key === 'Escape') closeProjectModal();
+                if (e.key === 'ArrowLeft') showSlide(slideIndex - 1);
+                if (e.key === 'ArrowRight') showSlide(slideIndex + 1);
             });
         });
     </script>
